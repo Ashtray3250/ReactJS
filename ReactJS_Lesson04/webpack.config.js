@@ -11,6 +11,17 @@ module.exports = {
        filename: 'app.js',
    },
 
+   devServer: {
+    port: 8080,
+    historyApiFallback: {
+        index: 'index.html',
+        devtool: 'cheap-inline-module-source-map'
+    }
+ },
+
+
+
+
    watch: process.argv[process.argv.length - 1] === 'development',
 
    module: {
@@ -44,4 +55,6 @@ module.exports = {
        modules: [`${__dirname}/static_src`, 'node_modules'],
        extensions: ['.js', '.jsx'],
     },
+
+    
 };
