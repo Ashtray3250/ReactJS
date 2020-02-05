@@ -1,9 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import {bindActionCreators} from "redux";
+import connect from "react-redux/es/connect/connect";
 
-export default class Profile extends React.Component {
-   render() {
-       return (
+
+
+class Profile extends React.Component {
+    render() {
+        return (
            <div>
                <h1>Profile</h1>
                <div>Ashtray</div>
@@ -14,3 +18,11 @@ export default class Profile extends React.Component {
        )
    }
 }
+
+const mapStateToProps = ({profileReducer}) => ({
+    profile: profileReducer
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
