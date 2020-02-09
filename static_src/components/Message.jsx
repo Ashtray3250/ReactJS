@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class Message extends React.Component {
    static propTypes = {
-       text: PropTypes.string.isRequired,
+       text: PropTypes.object.isRequired,
        sender: PropTypes.string.isRequired,
    };
 
