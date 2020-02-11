@@ -4,19 +4,20 @@ import connect from "react-redux/es/connect/connect";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import {push} from 'connected-react-router'
-import { TextField, FloatingActionButton } from 'material-ui';
-import SendIcon from 'material-ui/svg-icons/content/send';
+import SendIcon from '@material-ui/icons/Send';
 import AddIcon from '@material-ui/icons/Add';
 import PropTypes from "prop-types";
+import TextField from '@material-ui/core/TextField';
 import ListItemText from '@material-ui/core/ListItemText';
 import { addChat,  blinkChat} from '../actions/chatActions';
+import '../styles/styles.css';
 
 class ChatList extends React.Component {
     static propTypes = {
         chats: PropTypes.object.isRequired,
         addChat: PropTypes.func.isRequired,
         push: PropTypes.func.isRequired,
-        blink: PropTypes.number.isRequired,
+        blink: PropTypes.number,
     };
     state = {
         input: '',
@@ -24,7 +25,6 @@ class ChatList extends React.Component {
     static defaultProps = {
         blink: undefined,
       };
-
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     };
