@@ -1,14 +1,58 @@
-.message-field {
-   display: flex;
-   flex-direction: column;
-   background-color: #e2e2e2;
-   height: calc(100% - 56px);
-   width: 100%;
-   padding: 20px;
-   overflow-y: scroll;
+body {
    box-sizing: border-box;
 }
 
+.headheader {
+   font-size: 30px;
+   font-weight: 700;
+}
+.layout {
+   height: 90vh;
+   width: 100vw;
+   margin: 0 auto;
+   display: flex;
+   flex-wrap: wrap;
+   /* align-items: space-around; */
+
+}
+
+.header {
+   width: 100%;
+   height: 200px;
+   background: #b0bec5;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-direction: column;
+}
+
+.chatlist {
+   display: flex;
+   flex-direction: column;
+   width: 27%;
+   height: calc(100vh - 236px);
+   background: #cfd8dc;
+   
+}
+.message-box {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   height: calc(100vh - 240px);
+   width: 67%;
+   /* padding: 20px 20px 0; */
+   background-color: #e2e2e2;
+   
+}
+
+.message-field {
+   display: flex;
+   flex-direction: column;
+   padding: 20px 20px 0;
+   overflow-y: scroll;
+   height: 100vh;
+   
+}
 .message {
    background-color: lightblue;
    padding: 5px 15px;
@@ -20,4 +64,33 @@
 .message-sender {
    color: gray;
    font-size: 14px;
+}
+
+@media (max-width:650px) {
+   .layout{
+       width: 100vw;
+       height: 100vh;
+   }
+
+   .chatlist {
+       display: flex;
+       flex-direction: row;
+       width: 100vw;
+       height : 10vh;
+   }
+   .header {
+       height: 15vh;
+   }
+   .headheader {
+       font-size: 20px;
+       font-weight: 700;
+   }
+   .message-box {
+       width: 100vw;
+       height: 73vh;
+   }
+   .message-field {
+       padding: 10px 10px 0;
+   }
+   
 }
